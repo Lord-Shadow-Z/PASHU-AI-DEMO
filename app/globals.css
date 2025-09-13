@@ -1,0 +1,203 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated color palette for agricultural theme with green and white */
+  --font-poppins: "Poppins", sans-serif; /* Poppins font */
+  --background: oklch(1 0 0); /* Pure white background */
+  --foreground: oklch(0.2 0 0); /* Dark text for better readability */
+  --card: oklch(0.99 0.01 142); /* Very light green card background */
+  --card-foreground: oklch(0.2 0 0); /* Dark card text */
+  --popover: oklch(1 0 0); /* White popover */
+  --popover-foreground: oklch(0.2 0 0); /* Dark popover text */
+  --primary: oklch(0.42 0.18 142); /* #2E7D32 equivalent - main green */
+  --primary-foreground: oklch(1 0 0); /* White text on primary */
+  --secondary: oklch(0.95 0.02 142); /* Very light green secondary */
+  --secondary-foreground: oklch(0.2 0 0); /* Dark text on secondary */
+  --muted: oklch(0.96 0.01 142); /* Light gray-green muted */
+  --muted-foreground: oklch(0.5 0 0); /* Medium gray muted text */
+  --accent: oklch(0.45 0.15 142); /* Slightly lighter green accent */
+  --accent-foreground: oklch(1 0 0); /* White text on accent */
+  --destructive: oklch(0.55 0.25 25); /* Red for errors */
+  --destructive-foreground: oklch(1 0 0); /* White text on destructive */
+  --border: oklch(0.92 0.01 142); /* Light green-gray border */
+  --input: oklch(1 0 0); /* White input background */
+  --ring: oklch(0.45 0.15 142); /* Green focus ring */
+  --chart-1: oklch(0.42 0.18 142);
+  --chart-2: oklch(0.45 0.15 142);
+  --chart-3: oklch(0.55 0.25 25);
+  --chart-4: oklch(0.6 0.2 60);
+  --chart-5: oklch(0.5 0.15 200);
+  --radius: 0.75rem; /* Increased border radius for modern look */
+  --sidebar: oklch(1 0 0);
+  --sidebar-foreground: oklch(0.2 0 0);
+  --sidebar-primary: oklch(0.42 0.18 142);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.45 0.15 142);
+  --sidebar-accent-foreground: oklch(0.2 0 0);
+  --sidebar-border: oklch(0.92 0.01 142);
+  --sidebar-ring: oklch(0.45 0.15 142);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+@theme inline {
+  --font-sans: var(--font-poppins);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+@layer components {
+  /* Custom progress bar styles */
+  .progress-step {
+    @apply relative flex items-center justify-center w-10 h-10 rounded-full border-2 transition-all duration-300;
+  }
+
+  .progress-step.active {
+    @apply bg-primary border-primary text-primary-foreground shadow-lg scale-110;
+  }
+
+  .progress-step.completed {
+    @apply bg-green-500 border-green-500 text-white;
+  }
+
+  .progress-step.inactive {
+    /* Fixed contrast by using emerald background with white text for better visibility */
+    @apply bg-emerald-600 border-emerald-500 text-white;
+  }
+
+  /* Ripple effect for buttons */
+  .ripple {
+    @apply relative overflow-hidden;
+  }
+
+  .ripple::before {
+    content: "";
+    @apply absolute inset-0 bg-white/20 rounded-full scale-0 transition-transform duration-300;
+  }
+
+  .ripple:active::before {
+    @apply scale-100;
+  }
+
+  /* Floating label animation */
+  .floating-label {
+    @apply absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 transition-all duration-200 pointer-events-none;
+  }
+
+  .floating-label.active {
+    @apply -top-2 left-2 text-xs bg-white px-1 text-primary;
+  }
+
+  /* Cattle silhouette background pattern */
+  .cattle-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23059669' fill-opacity='0.03'%3E%3Cpath d='M30 30c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20zm0 0c0 11.046 8.954 20 20 20s20-8.954 20-20-8.954-20-20-20-20 8.954-20 20z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+}
+
+@layer utilities {
+  /* Custom gradient backgrounds */
+  .bg-agricultural-gradient {
+    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 50%, #bbf7d0 100%);
+  }
+
+  .bg-primary-gradient {
+    background: linear-gradient(135deg, #2e7d32 0%, #388e3c 50%, #43a047 100%);
+  }
+
+  /* Text gradients */
+  .text-agricultural-gradient {
+    background: linear-gradient(135deg, #2e7d32, #388e3c, #43a047);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Shadow utilities */
+  .shadow-agricultural {
+    box-shadow: 0 10px 25px -5px rgba(46, 125, 50, 0.1), 0 4px 6px -2px rgba(46, 125, 50, 0.05);
+  }
+
+  .shadow-agricultural-lg {
+    box-shadow: 0 20px 40px -10px rgba(46, 125, 50, 0.15), 0 8px 16px -4px rgba(46, 125, 50, 0.1);
+  }
+}
